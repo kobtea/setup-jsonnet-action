@@ -14,21 +14,21 @@ type Tool = {
 const tools: Tool[] = [
   {
     name: 'jsonnet',
-    version: '0.17.0',
+    version: '0.20.0',
     fileType: 'tar.gz',
     amd64Url:
-      'https://github.com/google/go-jsonnet/releases/download/v0.17.0/go-jsonnet_0.17.0_Linux_x86_64.tar.gz',
+      'https://github.com/google/go-jsonnet/releases/download/v0.20.0/go-jsonnet_0.20.0_Linux_x86_64.tar.gz',
     arm64Url:
-      'https://github.com/google/go-jsonnet/releases/download/v0.17.0/go-jsonnet_0.17.0_Linux_arm64.tar.gz'
+      'https://github.com/google/go-jsonnet/releases/download/v0.20.0/go-jsonnet_0.20.0_Linux_arm64.tar.gz'
   },
   {
     name: 'jb',
-    version: '0.4.0',
+    version: '0.5.1',
     fileType: 'binary',
     amd64Url:
-      'https://github.com/jsonnet-bundler/jsonnet-bundler/releases/download/v0.4.0/jb-linux-amd64',
+      'https://github.com/jsonnet-bundler/jsonnet-bundler/releases/download/v0.5.1/jb-linux-amd64',
     arm64Url:
-      'https://github.com/jsonnet-bundler/jsonnet-bundler/releases/download/v0.4.0/jb-linux-arm64'
+      'https://github.com/jsonnet-bundler/jsonnet-bundler/releases/download/v0.5.1/jb-linux-arm64'
   }
 ]
 
