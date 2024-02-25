@@ -2,5 +2,5 @@ name: Setup Jsonnet
 description: Setup jsonnet and jsonnet-bundler
 author: Hiroaki Kobayashi
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/index.js'
