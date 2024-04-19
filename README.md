@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: kobtea/setup-jsonnet-action@v1
+      - uses: kobtea/setup-jsonnet-action@v2
       - run: |
           jb install
           find . -type f | xargs -IFILE bash -c "jsonnetfmt FILE | diff -u FILE -"
