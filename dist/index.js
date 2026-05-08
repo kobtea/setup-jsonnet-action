@@ -32985,10 +32985,10 @@ function _getGlobal(key, defaultValue) {
 const tools = [
     {
         name: 'jsonnet',
-        version: '0.21.0',
+        version: '0.22.0',
         fileType: 'tar.gz',
-        amd64Url: 'https://github.com/google/go-jsonnet/releases/download/v0.21.0/go-jsonnet_Linux_x86_64.tar.gz',
-        arm64Url: 'https://github.com/google/go-jsonnet/releases/download/v0.21.0/go-jsonnet_Linux_arm64.tar.gz'
+        amd64Url: 'https://github.com/google/go-jsonnet/releases/download/v0.22.0/go-jsonnet_0.22.0_linux_amd64.tar.gz',
+        arm64Url: 'https://github.com/google/go-jsonnet/releases/download/v0.22.0/go-jsonnet_0.22.0_linux_arm64.tar.gz'
     },
     {
         name: 'jb',
