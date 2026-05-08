@@ -1,7 +1,6 @@
 # Setup Jsonnet
 
-This GitHub Action installs jsonnet binaries. 
-Installed binaries are:
+This GitHub Action installs jsonnet binaries. Installed binaries are:
 
 - jsonnet
 - jsonnetfmt
@@ -23,13 +22,13 @@ name: Jsonnet
 on:
   pull_request:
   push:
-    
+
 jobs:
   format:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: kobtea/setup-jsonnet-action@v2
+      - uses: actions/checkout@v6
+      - uses: kobtea/setup-jsonnet-action@v3
       - run: |
           jb install
           find . -type f | xargs -IFILE bash -c "jsonnetfmt FILE | diff -u FILE -"
@@ -37,31 +36,34 @@ jobs:
 
 ## Develop this action
 
-Install the dependencies  
+Install the dependencies
+
 ```bash
 $ npm install
 ```
 
-Build the typescript and package it for distribution
+Format, test, and build the action
+
 ```bash
-$ npm run build && npm run package
+$ npm run all
 ```
 
-## Publish to a distribution branch
-
-Actions are run from GitHub repos so we will checkin the packed dist folder. 
-
-Then run [ncc](https://github.com/zeit/ncc) and push the results:
+Package for distribution
 
 ```bash
-$ npm run package
+$ npm run bundle
+```
+
+## Publish a new release
+
+Commit the rebuilt `dist/` directory and push a new tag:
+
+```bash
 $ git add dist
-$ git commit -a -m "prod dependencies"
-$ git push origin releases/v1
+$ git commit -m "chore: rebuild dist for vX"
+$ git tag vX
+$ git push origin vX
 ```
 
-Note: We recommend using the `--license` option for ncc, which will create a license file for all of the production node modules used in your project.
-
-Your action is now published! :rocket: 
-
-See the [versioning documentation](https://github.com/actions/toolkit/blob/master/docs/action-versioning.md)
+See the
+[versioning documentation](https://github.com/actions/toolkit/blob/main/docs/action-versioning.md)

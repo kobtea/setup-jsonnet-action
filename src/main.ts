@@ -32,9 +32,13 @@ const tools: Tool[] = [
   }
 ]
 
-async function run(): Promise<void> {
+export async function run(): Promise<void> {
   try {
-    const urlKey = os.arch().startsWith('arm') ? 'arm64Url' : 'amd64Url'
+    const urlKey: keyof Pick<Tool, 'amd64Url' | 'arm64Url'> = os
+      .arch()
+      .startsWith('arm')
+      ? 'arm64Url'
+      : 'amd64Url'
     for (const tool of tools) {
       const downloadPath = await tc.downloadTool(tool[urlKey])
       let cachePath = tc.find(tool.name, tool.version)
@@ -66,5 +70,3 @@ async function run(): Promise<void> {
     if (error instanceof Error) core.setFailed(error.message)
   }
 }
-
-run()
